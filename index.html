@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IKL Honor of Kings | Ticketing System</title>
+</head>
+<body>
+
+    <header>
+        <img src="image/ikl-logo.png" alt="Indonesia King's League Logo" width="150">
+        <h1>Indonesia King's League (IKL) - Honor of Kings</h1>
+    </header>
+
+    <hr>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#schedule">Match Schedule</a></li>
+            <li><a href="#teams">Teams</a></li>
+            <li><a href="#book">Book Tickets</a></li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <main>
+        <section id="book">
+            <h2>Ticket Booking Form</h2>
+            <form action="/submit-booking" method="POST">
+                <fieldset>
+                    <legend>Select Your Match</legend>
+
+                    <p>
+                        <label for="match_selection">Select Match:</label><br>
+                        <select id="match_selection" name="match_selection" required>
+                            <option value="">-- Choose a Match --</option>
+                            <option value="match1">March 12: KAGENDRA vs BOOM</option>
+                            <option value="match2">March 12: RRQ vs ALTER EGO</option>
+                            <option value="match3">March 13: BTR vs ONIC</option>
+                            <option value="match4">March 13: EVOS vs GEEK FAM</option>
+                        </select>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Ticket Details</legend>
+
+                    <p>
+                        <label for="category">Ticket Category:</label><br>
+                        <select id="category" name="category" required>
+                            <option value="">-- Select Category --</option>
+                            <option value="mythic">Mythic (VIP Front Row)</option>
+                            <option value="legend">Legend (Regular Tribune)</option>
+                            <option value="epic">Epic (Festival Standing)</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="quantity">Quantity:</label><br>
+                        <input type="number" id="quantity" name="quantity" min="1" max="5" required>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <p>
+                        <label for="buyer_name">Full Name:</label><br>
+                        <input type="text" id="buyer_name" name="buyer_name" placeholder="Enter your full name" required>
+                    </p>
+
+                    <p>
+                        <label for="buyer_email">Email Address:</label><br>
+                        <input type="email" id="buyer_email" name="buyer_email" placeholder="example@email.com" required>
+                    </p>
+
+                    <p>
+                        <label for="buyer_phone">Phone Number:</label><br>
+                        <input type="tel" id="buyer_phone" name="buyer_phone" placeholder="+62..." required>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button type="submit">Proceed to Payment</button>
+                </p>
+            </form>
+        </section>
+
+        <hr>
+
+        <section id="history">
+            <h2>Recent Ticket Bookings</h2>
+            <table border="1" cellpadding="8">
+                <caption>List of 5 Latest Match Bookings</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Booking ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Match</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Qty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>IKL-001</td>
+                        <td>John Doe</td>
+                        <td>KAGENDRA vs BOOM</td>
+                        <td>Mythic</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>IKL-002</td>
+                        <td>Ikan Kerapu</td>
+                        <td>RRQ vs ALTER EGO</td>
+                        <td>Legend</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>IKL-003</td>
+                        <td>Stephen Curry</td>
+                        <td>BTR vs ONIC</td>
+                        <td>Epic</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>IKL-004</td>
+                        <td>Adya Handika</td>
+                        <td>EVOS vs GEEK FAM</td>
+                        <td>Mythic</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>IKL-005</td>
+                        <td>Saya</td>
+                        <td>AURA vs DEWA</td>
+                        <td>Legend</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <hr>
+
+    <aside>
+        <h2>Tournament Statistics</h2>
+        <ul>
+            <li>Total Tickets Sold: <strong>1,450</strong></li>
+            <li>Mythic Seats Remaining: <strong>12</strong></li>
+            <li>Legend Seats Remaining: <strong>340</strong></li>
+        </ul>
+    </aside>
+
+    <hr>
+
+    <footer>
+        <p><strong>Indonesia King's League (IKL)</strong></p>
+        <p>Official Honor of Kings Tournament Ticketing</p>
+        <p><small>&copy; <time datetime="2026">2026</time> IKL Esports. All Rights Reserved.</small></p>
+    </footer>
+
+</body>
+</html>
