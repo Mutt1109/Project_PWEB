@@ -4,163 +4,205 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IKL Honor of Kings</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <img src="image/ikl-logo.png" alt="IKL" width="150">
-        <h1>Indonesia King's League (IKL) - Honor of Kings</h1>
+        <div class="nav-container">
+            <img src="image/ikl-logo.png" alt="IKL">
+            <h1>IKL Honor of Kings</h1>
+
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#matches">Matches</a></li>
+                    <li><a href="#book">Booking</a></li>
+                    <li><a href="#history">History</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <hr>
-
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#schedule">Match Schedule</a></li>
-            <li><a href="#teams">Teams</a></li>
-            <li><a href="#book">Book Tickets</a></li>
-        </ul>
-    </nav>
-
-    <hr>
-
     <main>
-        <section id="book">
-            <h2>Ticket Booking Form</h2>
-            <form action="/submit-booking" method="POST">
-                <fieldset>
-                    <legend>Select Your Match</legend>
 
-                    <p>
-                        <label for="match_selection">Select Match:</label><br>
-                        <select id="match_selection" name="match_selection" required>
-                            <option value="">-- Choose a Match --</option>
-                            <option value="match1">March 12: KAGENDRA vs BOOM</option>
-                            <option value="match2">March 12: RRQ vs ALTER EGO</option>
-                            <option value="match3">March 13: BTR vs ONIC</option>
-                            <option value="match4">March 13: EVOS vs GEEK FAM</option>
-                        </select>
-                    </p>
-                </fieldset>
+        <!-- ---home--- -->
+        <section id="home" class="hero-section">
+            <div class="overlay">
+                <h2>INDONESIA KINGS LEAGUE</h2>
+                <p>Semua Bisa Menjadi Juara</p>
+            </div>
+        </section>
 
-                <fieldset>
-                    <legend>Ticket Details</legend>
+        <!-- ---matches--- -->
+        <section id="matches">
+            <h2>Match Highlights</h2>
 
-                    <p>
-                        <label for="category">Ticket Category:</label><br>
-                        <select id="category" name="category" required>
-                            <option value="">-- Select Category --</option>
-                            <option value="mythic">Mythic (VIP Front Row)</option>
-                            <option value="legend">Legend (Regular Tribune)</option>
-                            <option value="epic">Epic (Festival Standing)</option>
-                        </select>
-                    </p>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>KAGENDRA vs BOOM</h3>
+                    <p>March 12</p>
+                    <span class="badge mythic">Mythic</span>
+                </article>
 
-                    <p>
-                        <label for="quantity">Quantity:</label><br>
-                        <input type="number" id="quantity" name="quantity" min="1" max="5" required>
-                    </p>
-                </fieldset>
+                <article class="card">
+                    <h3>RRQ vs ALTER EGO</h3>
+                    <p>March 12</p>
+                    <span class="badge legend">Legend</span>
+                </article>
 
-                <fieldset>
-                    <legend>Personal Information</legend>
+                <article class="card">
+                    <h3>BTR vs ONIC</h3>
+                    <p>March 13</p>
+                    <span class="badge epic">Epic</span>
+                </article>
 
-                    <p>
-                        <label for="buyer_name">Full Name:</label><br>
-                        <input type="text" id="buyer_name" name="buyer_name" placeholder="Enter your full name" required>
-                    </p>
+                <article class="card">
+                    <h3>EVOS vs GEEK FAM</h3>
+                    <p>March 13</p>
+                    <span class="badge mythic">Mythic</span>
+                </article>
+            </div>
+        </section>
 
-                    <p>
-                        <label for="buyer_email">Email Address:</label><br>
-                        <input type="email" id="buyer_email" name="buyer_email" placeholder="example@email.com" required>
-                    </p>
-
-                    <p>
-                        <label for="buyer_phone">Phone Number:</label><br>
-                        <input type="tel" id="buyer_phone" name="buyer_phone" placeholder="+62..." required>
-                    </p>
-                </fieldset>
-
-                <p>
-                    <button type="submit">Proceed to Payment</button>
-                </p>
+        <!-- ---search--- -->
+        <section>
+            <h2>Search Match</h2>
+            <form class="search-form">
+                <input type="text" placeholder="Search match...">
+                <button type="submit">Search</button>
             </form>
         </section>
 
-        <hr>
+        <!-- ---layout--- -->
+        <div class="page-layout">
 
+            <section id="book">
+                <h2>Ticket Booking</h2>
+
+                <form>
+                    <fieldset>
+                        <legend>Select Match</legend>
+
+                        <select required>
+                            <option value="">Choose Match</option>
+                            <option>KAGENDRA vs BOOM</option>
+                            <option>RRQ vs ALTER EGO</option>
+                            <option>BTR vs ONIC</option>
+                            <option>EVOS vs GEEK FAM</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Details</legend>
+
+                        <select required>
+                            <option value="">Category</option>
+                            <option>Mythic</option>
+                            <option>Legend</option>
+                            <option>Epic</option>
+                        </select>
+
+                        <input type="number" placeholder="Quantity" min="1" max="5">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Personal Info</legend>
+
+                        <input type="text" placeholder="Full Name">
+                        <input type="email" placeholder="Email">
+                        <input type="tel" placeholder="Phone">
+                    </fieldset>
+
+                    <button type="submit">Proceed</button>
+                </form>
+            </section>
+
+            <!-- ---sidebar--- -->
+            <aside>
+                <h2>Filter</h2>
+
+                <div class="filter-group">
+                    <label><input type="checkbox"> Mythic</label>
+                    <label><input type="checkbox"> Legend</label>
+                    <label><input type="checkbox"> Epic</label>
+                </div>
+
+                <h2>Statistics</h2>
+                <ul>
+                    <li>Total Tickets <strong>1450</strong></li>
+                    <li>Mythic Left <strong>12</strong></li>
+                    <li>Legend Left <strong>340</strong></li>
+                </ul>
+            </aside>
+
+        </div>
+
+        <!-- ---history--- -->
         <section id="history">
-            <h2>Recent Ticket Bookings</h2>
-            <table border="1" cellpadding="8">
-                <caption>List of 5 Latest Match Bookings</caption>
+            <h2>Recent Booking</h2>
+
+            <table>
                 <thead>
                     <tr>
-                        <th scope="col">Booking ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Match</th>
-                        <th scope="col">Category</th>
-                        <th scope="col">Qty</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Match</th>
+                        <th>Category</th>
+                        <th>Qty</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     <tr>
                         <td>IKL-001</td>
-                        <td>John Doe</td>
+                        <td>John</td>
                         <td>KAGENDRA vs BOOM</td>
                         <td>Mythic</td>
                         <td>2</td>
                     </tr>
+
                     <tr>
                         <td>IKL-002</td>
-                        <td>Ikan Kerapu</td>
+                        <td>Adit</td>
                         <td>RRQ vs ALTER EGO</td>
                         <td>Legend</td>
                         <td>1</td>
                     </tr>
+
                     <tr>
                         <td>IKL-003</td>
-                        <td>Stephen Curry</td>
+                        <td>Sinta</td>
                         <td>BTR vs ONIC</td>
                         <td>Epic</td>
                         <td>4</td>
                     </tr>
-                    <tr>
-                        <td>IKL-004</td>
-                        <td>Adya Handika</td>
-                        <td>EVOS vs GEEK FAM</td>
-                        <td>Mythic</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>IKL-005</td>
-                        <td>Saya</td>
-                        <td>AURA vs DEWA</td>
-                        <td>Legend</td>
-                        <td>3</td>
-                    </tr>
                 </tbody>
             </table>
         </section>
+
     </main>
 
-    <hr>
-
-    <aside>
-        <h2>Tournament Statistics</h2>
-        <ul>
-            <li>Total Tickets Sold: <strong>1,450</strong></li>
-            <li>Mythic Seats Remaining: <strong>12</strong></li>
-            <li>Legend Seats Remaining: <strong>340</strong></li>
-        </ul>
-    </aside>
-
-    <hr>
-
+    <!-- ---footer--- -->
     <footer>
-        <p><strong>Indonesia King's League (IKL)</strong></p>
-        <p>Official Honor of Kings Tournament Ticketing</p>
-        <p><small>&copy; <time datetime="2026">2026</time> IKL Esports. All Rights Reserved.</small></p>
+        <div class="footer-grid">
+            <section>
+                <h3>About</h3>
+                <p>IKL Official Tournament</p>
+            </section>
+
+            <section>
+                <h3>Contact</h3>
+                <p>Email: ikl@email.com</p>
+            </section>
+
+            <section>
+                <h3>Support</h3>
+                <p>Help Center</p>
+            </section>
+        </div>
+
+        <p>&copy; 2026 IKL</p>
     </footer>
 
 </body>
